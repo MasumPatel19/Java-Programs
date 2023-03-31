@@ -12,10 +12,12 @@ public class ArmstrongNumber {
 		System.out.println("Enter number : ");
 		num = scanner.nextInt();
 
+		int len = String.valueOf(num).length();
+
 		temp = num;
 		while (temp > 0) {
 			rem = temp % 10;
-			c = c + (rem * rem * rem);
+			c = c + ((int) Math.pow(rem, len));
 			temp /= 10;
 		}
 		if (num == c) {
